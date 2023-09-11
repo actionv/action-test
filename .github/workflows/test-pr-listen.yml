@@ -1,0 +1,27 @@
+name: test-pr-listen
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+  workflow_dispatch: # 添加手动触发事件
+    inputs:
+      pr_number:
+        description: 'PR Number'
+        required: true
+jobs:
+  checkin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR number
+        id: pr_number
+        run: echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+
+      - name: Run Custom Action
+        uses: thinkasany/pr-label-action@dev
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_number: ${{ env.PR_NUMBER }}
+          organize_name: 'doocs'
+          team_name: 'leetcode-algorithm'
