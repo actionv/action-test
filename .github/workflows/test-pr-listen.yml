@@ -24,4 +24,4 @@ jobs:
           github_token: ${{ secrets.ACTION_TOKEN }}
           pr_number: ${{ env.PR_NUMBER }}
           organize_name: 'actionv'
-          team_name: 'action-test'
+          team_name: 'action-team'
