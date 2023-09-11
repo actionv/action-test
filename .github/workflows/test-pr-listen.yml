@@ -23,5 +23,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_number: ${{ env.PR_NUMBER }}
-          organize_name: 'doocs'
-          team_name: 'leetcode-algorithm'
+          organize_name: 'actionv'
+          team_name: 'action-test'
