@@ -2,9 +2,7 @@ name: test-pr-listen
 
 on:
   pull_request_target:
-    types:
-      - opened
-      - synchronize
+    types: [opened, edited, reopened, synchronize]
   workflow_dispatch: # 添加手动触发事件
     inputs:
       pr_number:
